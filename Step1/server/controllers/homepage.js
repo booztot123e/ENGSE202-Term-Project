@@ -1,6 +1,6 @@
 const fetch = require("cross-fetch");
 const { response } = require("express");
-const AIC_URL = "https://api.artic.edu/api/v1/artworks/search?q=";
+const AIC_URL = "http://api-user66023.se-rmutl.net/api/v1/artworks/search?q=";
 
 const getArtworks = async (req, res = response) => {
   const { keyword } = req.params;
@@ -23,7 +23,7 @@ const getArtworks = async (req, res = response) => {
     const { data = [] } = await resp.json();
     const dataWithUrls = data.map((image) => ({
       ...image,
-      image_url: `https://www.artic.edu/iiif/2/${image.image_id}/full/843,/0/default.jpg`,
+      image_url: `http://api-user66023.se-rmutl.net/iiif/2/${image.image_id}/full/843,/0/default.jpg`,
     }));
 
     res.json(dataWithUrls);
