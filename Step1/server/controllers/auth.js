@@ -7,9 +7,6 @@ const config = require("../dbconfig.js")[env];
 const login = async (req, res = response) => {
   const { email, password } = req.body;
 
-  // const email = req.body.email;
-  // const password  = req.body.password;
-
   //----------------------
 
   let dbcon = mysql.createConnection(config);
@@ -37,8 +34,6 @@ const login = async (req, res = response) => {
             });
       */
     } else {
-      //  if (user.length > 0)
-
       // User not found
       return res.status(401).json({ message: "User not found !" });
     }
