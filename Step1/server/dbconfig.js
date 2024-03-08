@@ -5,7 +5,7 @@ var dbconfig = {
     port: "3306",
     user: "root",
     password: "",
-    database: "user66023_db",
+    database: "term_project_db",
   },
   production: {
     //connectionLimit : 10,
